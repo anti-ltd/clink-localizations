@@ -68,19 +68,25 @@ by hand: it records each asset's URL, SHA-256 digest, and byte count.
 The validator verifies structure. It cannot prove a translation is idiomatic;
 native-speaker review is a release gate.
 
-## Add your repository to Clink
+## Use a localization repository in Clink
 
 Clink fetches this official repository's `latest` release automatically during
 onboarding and whenever the app returns to the foreground. A selected locale is
 downloaded before it is applied; later releases update it automatically while
 the bundled English catalog remains the safe fallback.
 
+Anyone can publish a compatible public GitHub repository. In Clink, open
+**Repositories**, choose **Add repository**, and enter `owner/repository` (or
+its HTTPS GitHub URL). Its verified locale codes then appear in both the
+onboarding and App language pickers. Official Clink locales take precedence
+when the same locale exists in more than one source.
+
 ## Release security
 
-Clink will accept only the canonical GitHub `latest` release for its official
-repository. Every downloaded file is size-checked and SHA-256 verified in a
-staging directory before it becomes active. The prior verified localization
-remains active if an update fails.
+Clink will accept only the canonical GitHub `latest` release for the official
+repository or a repository the user explicitly added. Every downloaded file is
+size-checked and SHA-256 verified in a staging directory before it becomes
+active. The prior verified localization remains active if an update fails.
 
 ## Publishing is automatic
 
