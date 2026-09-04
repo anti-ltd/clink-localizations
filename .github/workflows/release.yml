@@ -3,7 +3,7 @@ name: Release localizations
 on:
   push:
     branches: [main]
-    paths: ["Catalog/**", "Localizations/**", "tools/**", ".github/workflows/release.yml"]
+    paths: ["Catalog/**", "Localizations/**", "release-locales.txt", "tools/**", ".github/workflows/release.yml"]
 
 permissions:
   contents: write

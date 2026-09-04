@@ -24,7 +24,8 @@ git clone git@github.com:anti-ltd/clink-localizations.git
 
 ## Current status
 
-`Catalog/Localizable.xcstrings` is the editable source catalog. Run
+`Catalog/Localizable.xcstrings` is the editable source catalog and
+`release-locales.txt` is the reviewed release allowlist. Run
 `./tools/export-localizations.sh` on a Mac after editing it; it compiles the
 catalog into the release-ready resources in `Localizations/`.
 
@@ -34,8 +35,11 @@ by a native speaker before release.
 
 ## Included localizations
 
-The repository contains every current Clink UI locale. English remains bundled
-as the offline fallback; installed locale resources replace it at runtime.
+The release contains every locale listed in `release-locales.txt`. Work-in-progress
+translations may remain in the source catalog, but are neither offered in Clink
+nor published until every key is translated and editorially reviewed. English
+remains bundled as the offline fallback; installed locale resources replace it
+at runtime.
 
 ## Pack format
 

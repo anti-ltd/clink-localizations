@@ -1,0 +1,13 @@
+en
+es
+fr
+de
+it
+pt
+ru
+ms
+hu
+ja
+zh-Hans
+ko
+et
