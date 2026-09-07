@@ -9,20 +9,8 @@ import sys
 
 root = pathlib.Path(__file__).resolve().parent.parent
 subprocess.run([sys.executable, str(root / "tools" / "validate-catalog.py")], check=True)
-catalog_hash = hashlib.sha256((root / "Catalog" / "Localizable.xcstrings").read_bytes()).hexdigest()
-fingerprint = root / "Localizations" / ".catalog-sha256"
-if not fingerprint.is_file() or fingerprint.read_text().strip() != catalog_hash:
-    raise SystemExit("Compiled localizations are stale. Run tools/export-localizations.sh on a Mac.")
+subprocess.run([sys.executable, str(root / "tools" / "validate-release.py")], check=True)
 packs = sorted(pack for pack in (root / "Localizations").glob("*.lproj") if not pack.name.startswith("._"))
-if not packs:
-    raise SystemExit("No localization packs found in Localizations/.")
-released = [line.strip() for line in (root / "release-locales.txt").read_text().splitlines() if line.strip()]
-pack_locales = [pack.name.removesuffix(".lproj") for pack in packs]
-if set(pack_locales) != set(released):
-    raise SystemExit(f"Localizations must exactly match release-locales.txt (found {pack_locales}).")
-validator = root / "tools" / "validate-localization.py"
-for pack in packs:
-    subprocess.run([sys.executable, str(validator), str(pack)], check=True)
 try:
     version = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=root, text=True, stderr=subprocess.DEVNULL).strip()
 except subprocess.CalledProcessError:

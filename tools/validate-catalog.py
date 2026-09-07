@@ -18,9 +18,16 @@ FORMAT = re.compile(
 )
 
 
-def signature(value: str) -> collections.Counter[str]:
+def signature(value: str) -> collections.Counter[tuple[int, str]]:
     value = value.replace("%%", "")
-    return collections.Counter(re.sub(r"^%\d+\$", "%", token) for token in FORMAT.findall(value))
+    arguments = []
+    for index, token in enumerate(FORMAT.findall(value), start=1):
+        position = re.match(r"^%(\d+)\$", token)
+        arguments.append((int(position.group(1)) if position else index,
+                          re.sub(r"^%\d+\$", "%", token)))
+    # Reordering requires explicit positions; otherwise printf reads each
+    # argument using the wrong type even when the set of placeholders matches.
+    return collections.Counter(arguments)
 
 
 def units(localization: dict) -> list[dict]:
@@ -28,7 +35,10 @@ def units(localization: dict) -> list[dict]:
     if "stringUnit" in localization:
         result.append(localization["stringUnit"])
     for variation in localization.get("variations", {}).values():
-        result.extend(form.get("stringUnit", {}) for form in variation.values())
+        if not variation:
+            result.append({})
+        for form in variation.values():
+            result.extend(units(form) or [{}])
     return result
 
 
@@ -64,7 +74,7 @@ def main() -> None:
         if remainder > 0:
             preview += f"\nERROR: ... and {remainder} more"
         raise SystemExit(preview)
-    print(f"Catalog is complete for {len(locales) - 1} translated release locale(s).")
+    print(f"Catalog is complete for {len(locales) - 1} translated release locale(s); editorial approval is separate.")
 
 
 if __name__ == "__main__":

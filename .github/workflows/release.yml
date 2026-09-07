@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: python3 tools/test-validation.py
       - run: python3 tools/build-manifest.py
       - run: gh release delete latest --yes || true
         env: { GH_TOKEN: "${{ github.token }}" }

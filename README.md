@@ -29,6 +29,13 @@ git clone git@github.com:anti-ltd/clink-localizations.git
 `./tools/export-localizations.sh` on a Mac after editing it; it compiles the
 catalog into the release-ready resources in `Localizations/`.
 
+Run `python3 tools/validate-release.py` to check the existing release assets
+without changing them. It verifies the source fingerprint, exact release-locale
+set, every compiled translation, and plural values and argument types. The iOS
+repository also runs this check as part of `make check-localization`, so a complete
+source catalog cannot conceal outdated downloadable packs. Validator regressions
+are covered by `python3 tools/test-validation.py`.
+
 Do not publish an incomplete locale. A localization is a product surface, not
 a collection of strings: every key must be translated and editorially reviewed
 by a native speaker before release.
