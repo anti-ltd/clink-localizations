@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/anti-ltd/clink-language-packs/main/icon-1024.png" width="96" alt="Clink app icon">
+  <img src="README-assets/clink-icon.png" width="96" alt="Clink app icon">
 </p>
 
 <h1 align="center">Clink localizations</h1>
