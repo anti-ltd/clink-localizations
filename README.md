@@ -42,6 +42,10 @@ by a native speaker before release.
 
 ## Included localizations
 
+The expanded UI languages are included in the active catalog and normal release packs.
+The maintainer confirmed review and acceptance on 30 September 2026; see
+[LOCALIZATION-NOTES.md](LOCALIZATION-NOTES.md).
+
 The release contains every locale listed in `release-locales.txt`. Work-in-progress
 translations may remain in the source catalog, but are neither offered in Clink
 nor published until every key is translated and editorially reviewed. English
