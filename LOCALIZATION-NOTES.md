@@ -29,3 +29,45 @@ translation quality.
 
 Hindi and Nepali retain incomplete initial catalog entries and are not included
 in the supported UI list or release allowlist.
+
+## Test Lab rename — 30 September 2026
+
+Added the Test Lab title, feedback attachment label, and empty-results explanation
+in all 28 translated UI locales. Legacy Beta Lab lookup keys remain available to
+installed app versions. The new copy and compiled packs pass structural validation;
+native-speaker editorial review of these three entries is still required before
+publishing them. The earlier acceptance above does not cover this new copy.
+
+## Loader accessibility — 30 September 2026
+
+Added the default “Loading” accessibility label in all 28 translated UI locales.
+The lowercase “anti” wordmark is catalogued as an intentionally untranslated
+brand name. The new loading translations have been checked for their loading-state
+meaning and format; native-speaker editorial review is still required before
+release. The earlier maintainer acceptance does not cover this new entry.
+
+## Xiaohe double pinyin — 1 October 2026
+
+Added Simplified and Traditional Chinese Xiaohe double-pinyin layout names in
+English and all 28 translated UI locales. Chinese uses 小鹤双拼 / 小鶴雙拼;
+other locales retain the input scheme's name in locally appropriate terminology.
+The catalog, compiled packs and app/extension runtime catalogs pass the coverage
+and integrity gates. Native-speaker editorial review of these two new names is
+still required before release; the earlier acceptance does not cover them.
+
+## Purchase restoration feedback — 1 October 2026
+
+Added two membership restore messages in English and all 28 translated UI
+locales: no purchases found (with an Apple Account check), and restoration
+failed (with a retry instruction). They distinguish an empty result from an
+incomplete check and use the app's selected UI language. Native-speaker editorial
+review of these two new messages is required before release; earlier translation
+acceptance does not cover them. No native-speaker reviewer has been recorded yet.
+
+## 2026-10-01 — Paired theme editor
+
+Added six strings for the paired-theme toggle, Shared/Light/Dark editing scope,
+shared-settings reset, and inheritance explanations across all 28 translated
+release locales. Catalog, compiled packs, and app/extension mirrors are in sync;
+coverage validation passes. These new strings still require native-speaker
+editorial review before release; no native-speaker reviewer is recorded for them.
