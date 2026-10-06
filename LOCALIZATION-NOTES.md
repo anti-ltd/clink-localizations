@@ -71,3 +71,32 @@ shared-settings reset, and inheritance explanations across all 28 translated
 release locales. Catalog, compiled packs, and app/extension mirrors are in sync;
 coverage validation passes. These new strings still require native-speaker
 editorial review before release; no native-speaker reviewer is recorded for them.
+
+## Shared iOS and Android source — 2 October 2026
+
+Moved all 110 entries from the former Android-only catalog into
+`Catalog/Localizable.xcstrings`, preserving every value and review state.
+Both platforms now consume this source, including Android's on-copy clipboard
+option and platform-specific permission instructions. Background corner controls
+also use this shared catalog. Generated Android XML and Apple runtime resources
+are derived outputs.
+
+The migrated entries contain 3,048 draft translations marked `needs_review`.
+Two unused historical FAQ keys also lack 16 locales each. The earlier editorial
+acceptance does not cover these entries. Native-speaker review and completion
+are required before the shared release can be exported; the existing compiled
+download packs have therefore not been replaced or published. Coverage gates
+must remain failing until this work is complete.
+
+## Maintainer approval — 5 October 2026
+
+The maintainer confirmed in chat that all current translations have been approved.
+Recorded that acceptance for the current release locales and changed their 3,090
+remaining `needs_review` values to `translated`, without changing translation text.
+This supersedes the earlier outstanding editorial-approval notes for existing copy.
+Hindi and Nepali remain outside the release allowlist.
+
+A separate content audit still identifies 59 long values containing unchanged
+English source text across seven released locales. These are content findings,
+not pending approval flags, and remain recorded in the Clink app audit dated
+5 October 2026. Structural validation does not detect untranslated prose.

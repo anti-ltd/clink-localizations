@@ -24,7 +24,14 @@ git clone git@github.com:anti-ltd/clink-localizations.git
 
 ## Current status
 
-`Catalog/Localizable.xcstrings` is the editable source catalog and
+`Catalog/Localizable.xcstrings` is the single editable source catalog for iOS
+and Android, including options and instructions specific to either platform.
+Use the same key for the same meaning and separate complete English keys when
+platform instructions differ; describe their context in the entry comment.
+Android XML and Apple runtime catalogs are generated from this source, not
+maintained as separate translations. Draft Android entries retain their review
+states and must pass native-speaker review before exporting a new shared release.
+
 `release-locales.txt` is the reviewed release allowlist. Run
 `./tools/export-localizations.sh` on a Mac after editing it; it compiles the
 catalog into the release-ready resources in `Localizations/`.
