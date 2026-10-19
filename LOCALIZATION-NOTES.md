@@ -100,3 +100,44 @@ A separate content audit still identifies 59 long values containing unchanged
 English source text across seven released locales. These are content findings,
 not pending approval flags, and remain recorded in the Clink app audit dated
 5 October 2026. Structural validation does not detect untranslated prose.
+
+## Brazilian Portuguese draft — 19 October 2026
+
+Added `pt-BR` to all 5,476 translatable keys in the shared catalog, including
+the nine pluralized keys (5,485 string units). European Portuguese (`pt`) and
+all other existing locale values are unchanged. The 38 entries marked
+`shouldTranslate: false` continue to use their original names or symbols.
+
+This is an AI-assisted draft adapted from the existing Portuguese catalog,
+with sentence-level revisions for Brazilian usage. It uses `você`, `arquivo`,
+`tela`, `salvar`, `compartilhar` and `assinatura`; platform-specific instructions
+distinguish iOS Ajustes from Android Configurações. The draft includes current
+and historical app copy, keyboard panels, accessibility text, and Android-only
+permissions, downloads and purchases. Format arguments, plural structures,
+code examples and links are retained.
+
+Every new string unit is `needs_review`. No native-speaking reviewer or release
+approval has been recorded. Coverage and format checks are technical evidence,
+not editorial approval. The 5 October acceptance applies to the earlier release
+locales and does not approve this translation. `pt-BR` stays out of
+`release-locales.txt`, downloadable releases, and both apps' supported UI lists.
+
+Before enabling or publishing:
+
+1. Have a Brazilian Portuguese native-speaking editor review the full locale,
+   including grammar, consistent feature names, permission paths, plurals,
+   accessibility labels, purchase terms and longer help text. Record the
+   reviewer, date and approved revision here, then update the reviewed states.
+2. Follow the app repository's `docs/19-adding-a-language.md` UI checklist:
+   add the locale, `Português (Brasil)` name and Brazilian flag on both platforms;
+   preserve regional matching so `pt-BR` does not resolve to European `pt`;
+   translate the iOS permission-purpose catalog; and add locale-resolution tests.
+3. Add `pt-BR` to the release allowlist, regenerate the release packs, Apple
+   runtime catalogs and Android resources, and run `make check-localization`.
+   Exercise the downloaded iOS app translation, offline extension resources,
+   and Android picker/system-language paths with real screens before release.
+   Update ANTI's app-language usage guide when the language becomes available.
+
+The iOS keyboard-sound instruction uses Apple's Brazilian terminology from
+[Alterar os sons ou a resposta tátil do teclado do iPhone](https://support.apple.com/pt-br/102463).
+The editor should confirm labels against the OS versions supported at release.
