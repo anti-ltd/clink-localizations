@@ -4,6 +4,7 @@ fr
 de
 it
 pt
+pt-BR
 ru
 ms
 hu

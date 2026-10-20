@@ -49,10 +49,10 @@ by a native speaker before release.
 
 ## Included localizations
 
-Brazilian Portuguese (`pt-BR`) is a complete translation draft in the shared
-catalog, separate from European Portuguese (`pt`). Its values remain
-`needs_review`, and it is not in the release allowlist or offered in either app.
-See [LOCALIZATION-NOTES.md](LOCALIZATION-NOTES.md) for review and activation steps.
+Brazilian Portuguese (`pt-BR`) is a reviewed translation in the shared catalog,
+separate from European Portuguese (`pt`). The maintainer confirmed review on
+20 October 2026; it is included in the release allowlist and both app pickers.
+See [LOCALIZATION-NOTES.md](LOCALIZATION-NOTES.md) for activation and release notes.
 
 The expanded UI languages are included in the active catalog and normal release packs.
 The maintainer confirmed review and acceptance on 30 September 2026; see

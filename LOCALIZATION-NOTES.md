@@ -116,13 +116,13 @@ and historical app copy, keyboard panels, accessibility text, and Android-only
 permissions, downloads and purchases. Format arguments, plural structures,
 code examples and links are retained.
 
-Every new string unit is `needs_review`. No native-speaking reviewer or release
-approval has been recorded. Coverage and format checks are technical evidence,
+At draft creation, every new string unit was `needs_review` and review had not
+yet been recorded. The maintainer confirmation below supersedes this draft status. Coverage and format checks are technical evidence,
 not editorial approval. The 5 October acceptance applies to the earlier release
-locales and does not approve this translation. `pt-BR` stays out of
-`release-locales.txt`, downloadable releases, and both apps' supported UI lists.
+locales and did not approve this translation. At that point `pt-BR` stayed out
+of `release-locales.txt`, downloadable releases, and both apps' supported UI lists.
 
-Before enabling or publishing:
+Original activation checklist (superseded by the 20 October activation below):
 
 1. Have a Brazilian Portuguese native-speaking editor review the full locale,
    including grammar, consistent feature names, permission paths, plurals,
@@ -141,3 +141,21 @@ Before enabling or publishing:
 The iOS keyboard-sound instruction uses Apple's Brazilian terminology from
 [Alterar os sons ou a resposta tátil do teclado do iPhone](https://support.apple.com/pt-br/102463).
 The editor should confirm labels against the OS versions supported at release.
+
+## Brazilian Portuguese activation — 20 October 2026
+
+The maintainer confirmed in chat that Brazilian Portuguese has had review.
+Accepted the existing catalog text and marked its 5485 pending string units
+as translated; the reviewed source SHA-256 before this state-only update was
+`bee373c91395ea7dd2f46c90569be2b0c8c349ce27ee804bd56213814c070993`. No reviewer identity was supplied.
+
+Enabled `pt-BR` in the release allowlist and both app language pickers, with
+Português (Brasil) and the Brazilian flag. System-language matching preserves
+the Brazilian region, including script-qualified tags, while other Portuguese
+regions keep the existing translation. Added the required Brazilian Portuguese
+iOS permission-purpose descriptions, reusing the catalog camera text. Those
+additional purpose descriptions were absent from the reviewed draft; their
+wording needs editorial confirmation before production release.
+
+Local resource generation and validation do not publish downloadable packs or
+install a new app build. Typing dictionaries and autocorrection are separate.
